@@ -1,0 +1,199 @@
+{
+    "user": [
+        {
+            "info": {
+                "id": "c5f0ab4b-e98b-40d1-a315-6883c46241291",
+                "username": "0",
+                "uid": "0",
+                "password": "0",
+                "twoFA": "0",
+                "email": "0",
+                "emailPassword": "0",
+                "phoneNumber": "0",
+                "birthDay": "",
+                "gender": "",
+                "avatar": "",
+                "group": "0",
+                "type": "",
+                "note": "",
+                "status": "",
+                "createdAt": "",
+                "updatedAt": ""
+            },
+            "browser": {
+                "name": "c5f0ab4b-e98b-40d1-a315-6883c46241291",
+                "mobile": {
+                    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+                    "screenHeight": 852,
+                    "screenWidth": 393,
+                    "viewportHeight": 659,
+                    "viewportWidth": 393
+                },
+                "desktop": {
+                    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                    "screenHeight": 900,
+                    "screenWidth": 1440,
+                    "viewportHeight": 749,
+                    "viewportWidth": 1392
+                }
+            },
+            "actions": {}
+        },
+        {
+            "info": {
+                "id": "c5f0ab4b-e98b-40d1-a315-6883c46241292",
+                "username": "1",
+                "uid": "1",
+                "password": "1",
+                "twoFA": "1",
+                "email": "1",
+                "emailPassword": "1",
+                "phoneNumber": "1",
+                "birthDay": "",
+                "gender": "",
+                "avatar": "",
+                "group": "1",
+                "type": "",
+                "note": "",
+                "status": "",
+                "createdAt": "",
+                "updatedAt": ""
+            },
+            "browser": {
+                "name": "c5f0ab4b-e98b-40d1-a315-6883c46241292",
+                "mobile": {
+                    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+                    "screenHeight": 852,
+                    "screenWidth": 393,
+                    "viewportHeight": 659,
+                    "viewportWidth": 393
+                },
+                "desktop": {
+                    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                    "screenHeight": 900,
+                    "screenWidth": 1440,
+                    "viewportHeight": 749,
+                    "viewportWidth": 1392
+                }
+            },
+            "actions": {}
+        },
+        {
+            "info": {
+                "id": "c5f0ab4b-e98b-40d1-a315-6883c46241293",
+                "username": "2",
+                "uid": "2",
+                "password": "2",
+                "twoFA": "2",
+                "email": "2",
+                "emailPassword": "2",
+                "phoneNumber": "2",
+                "birthDay": "",
+                "gender": "",
+                "avatar": "",
+                "group": "2",
+                "type": "",
+                "note": "",
+                "status": "",
+                "createdAt": "",
+                "updatedAt": ""
+            },
+            "browser": {
+                "name": "c5f0ab4b-e98b-40d1-a315-6883c46241293",
+                "mobile": {
+                    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+                    "screenHeight": 852,
+                    "screenWidth": 393,
+                    "viewportHeight": 659,
+                    "viewportWidth": 393
+                },
+                "desktop": {
+                    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                    "screenHeight": 900,
+                    "screenWidth": 1440,
+                    "viewportHeight": 749,
+                    "viewportWidth": 1392
+                }
+            },
+            "actions": {}
+        },
+        {
+            "info": {
+                "id": "c5f0ab4b-e98b-40d1-a315-6883c46241294",
+                "username": "3",
+                "uid": "3",
+                "password": "3",
+                "twoFA": "3",
+                "email": "3",
+                "emailPassword": "3",
+                "phoneNumber": "3",
+                "birthDay": "",
+                "gender": "",
+                "avatar": "",
+                "group": "3",
+                "type": "",
+                "note": "",
+                "status": "",
+                "createdAt": "",
+                "updatedAt": ""
+            },
+            "browser": {
+                "name": "c5f0ab4b-e98b-40d1-a315-6883c46241294",
+                "mobile": {
+                    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+                    "screenHeight": 852,
+                    "screenWidth": 393,
+                    "viewportHeight": 659,
+                    "viewportWidth": 393
+                },
+                "desktop": {
+                    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                    "screenHeight": 900,
+                    "screenWidth": 1440,
+                    "viewportHeight": 749,
+                    "viewportWidth": 1392
+                }
+            },
+            "actions": {}
+        },
+        {
+            "info": {
+                "id": "c5f0ab4b-e98b-40d1-a315-6883c46241295",
+                "username": "4",
+                "uid": "4",
+                "password": "4",
+                "twoFA": "4",
+                "email": "4",
+                "emailPassword": "4",
+                "phoneNumber": "4",
+                "birthDay": "",
+                "gender": "",
+                "avatar": "",
+                "group": "4",
+                "type": "",
+                "note": "",
+                "status": "",
+                "createdAt": "",
+                "updatedAt": ""
+            },
+            "browser": {
+                "name": "c5f0ab4b-e98b-40d1-a315-6883c46241295",
+                "mobile": {
+                    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+                    "screenHeight": 852,
+                    "screenWidth": 393,
+                    "viewportHeight": 659,
+                    "viewportWidth": 393
+                },
+                "desktop": {
+                    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15",
+                    "screenHeight": 900,
+                    "screenWidth": 1440,
+                    "viewportHeight": 749,
+                    "viewportWidth": 1392
+                }
+            },
+            "actions": {}
+        }
+    ]
+}

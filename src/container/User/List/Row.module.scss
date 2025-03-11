@@ -1,0 +1,107 @@
+// Row.module.scss
+.tableRow {
+    position: relative;
+
+    &:hover {
+        background-color: #f1f1f1;
+    }
+
+    .tableCell {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .actionRow {
+        width: 2rem;
+        padding: 0.2rem;
+
+        .actionButton {
+            width: 100%;
+            background-color: rgba($color: #32CD30, $alpha: 1);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba($color: #32CD30, $alpha: .8);
+            }
+        }
+    }
+}
+
+.expandInfo {
+    .expandContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .expandContent {
+            display: flex;
+            flex-wrap: wrap;
+
+            .userInfo {
+                flex-basis: 50%;
+                box-sizing: border-box;
+                padding: 0.2rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 2rem;
+                border-bottom: 1px solid rgba($color: #ccc, $alpha: .6);
+
+                label {
+                    display: inline-block;
+                    white-space: nowrap;
+                    min-width: 30%;
+                    padding: 0 1rem;
+                    text-transform: capitalize;
+                }
+
+                span {
+                    font-weight: 600;
+                    display: inline-block;
+                }
+            }
+        }
+
+        .expandActions {
+            display: flex; // Sử dụng flexbox để bố trí các nút
+            gap: 10px; // Khoảng cách giữa các nút
+            padding: 20px; // Padding cho div
+
+            .actionButton {
+                margin: 0 2rem;
+                padding: 0.8rem 2rem;
+                text-transform: capitalize;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer; // Con trỏ chuột khi di chuột lên nút
+                transition: background-color 0.3s ease; // Hiệu ứng chuyển tiếp
+                color: #fff;
+
+                &:first-child {
+                    background-color: rgba($color: #007bff, $alpha: 1.0);
+                }
+
+                &:first-child:hover {
+                    background-color: rgba($color: #007bff, $alpha: .6);
+                }
+
+                &:last-child {
+                    background-color: rgba($color: #DB1F48, $alpha: 1.0);
+                }
+
+                &:last-child:hover {
+                    background-color: rgba($color: #DB1F48, $alpha: .6);
+                }
+
+            }
+        }
+    }
+
+}

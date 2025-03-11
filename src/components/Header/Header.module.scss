@@ -1,0 +1,102 @@
+// Header.module.scss
+@use "~/App.scss" as *;
+
+.headerContainer {
+    width: 100%;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px 1px $color-border;
+    background-color: $color-white;
+
+    .navigation {
+
+        .navigationList {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            font-weight: 400;
+
+            .navigationItem {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                a {
+                    padding: 0.8rem 2rem;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    color: $color-text;
+                    transition: background-color 0.3s;
+
+                    &:hover {
+                        background-color: $color-border;
+                    }
+                }
+
+                &:hover .navigationSubMenu {
+                    display: block;
+                }
+
+                .navigationSubMenu {
+                    display: none;
+                    position: absolute;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: center;
+                    top: 3.2rem;
+                    box-shadow: 1px 1px 6px 1px $color-border;
+                    border-radius: 0 0 8px 8px;
+                    background-color: $color-background;
+                    width: 100%;
+
+                    .navigationItem {
+
+                        a {
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            border-radius: 0;
+                            width: 100%;
+                        }
+
+                        &:last-child a {
+                            border-radius: 0 0 8px 8px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .searchContainer {
+        .searchInputContainer {
+            margin-right: 2rem;
+            position: relative;
+
+            .searchInput {
+                padding: 0.4rem 1rem;
+                border-radius: 50px;
+                border: 1px solid $color-border;
+            }
+
+            .searchIcon {
+                width: 2rem;
+                height: 2rem;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0.2rem;
+            }
+        }
+
+        .searchResultsContainer {}
+    }
+}
