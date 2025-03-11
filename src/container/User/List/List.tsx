@@ -8,6 +8,7 @@ import SearchContext from "~/store/search/SearchContext";
 import { list as actionList, del as actionDelete } from "~/store/user/userActions";
 import styles from "./List.module.scss";
 import Row from "./Row";
+import Setting from "~/components/Setting/Setting";
 // import Launch from "~/components/modals/Launch";
 
 const List: React.FC = () => {
@@ -129,7 +130,7 @@ const List: React.FC = () => {
             </div>
             {
                 // currentId && <Launch id={currentId} isOpen={isLaunchModal} onClose={() => setIsLaunchModal(false)} />
-                <></>
+                currentId && <Setting isOpen={isLaunchModal} onClose={() => setIsLaunchModal(false)} idsSelected={[currentId]} />
             }
 
         </div>
