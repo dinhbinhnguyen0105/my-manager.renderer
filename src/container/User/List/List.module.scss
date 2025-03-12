@@ -1,4 +1,6 @@
 // List.module.scss
+@use "~/App.scss" as *;
+
 .listUser {
     width: 100%;
     min-height: 100vh;
@@ -8,7 +10,7 @@
         margin: 0 1rem;
         padding: 1rem;
         border-radius: 8px;
-        box-shadow: 1px 1px 6px 1px #ccc;
+        box-shadow: 1px 1px 6px 1px $color-border;
 
         .title {
             margin: 1.2rem 0;
@@ -39,7 +41,7 @@
 
         .errorMessage {
             font-family: 'Courier New', Courier, monospace;
-            color: red;
+            color: $color-danger;
         }
     }
 }

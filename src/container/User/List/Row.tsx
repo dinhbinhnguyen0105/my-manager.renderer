@@ -8,17 +8,18 @@ interface RowProps {
     user: UserInterface,
     formatDate: (isoDateString: string) => string,
     isExpanded: boolean,
+    isActive: boolean,
     handleContextMenu: (event: React.MouseEvent<HTMLTableRowElement>, index: number) => void,
     handleEditButtonClicked: (id: string) => void,
     handleDeleteButtonClicked: (event: React.MouseEvent<HTMLButtonElement>, id: string) => void,
     handleLaunchButtonClicked: (event: React.MouseEvent<HTMLButtonElement>, id: string) => void
 };
 
-const Row: React.FC<RowProps> = ({ index, user, isExpanded, formatDate, handleContextMenu, handleEditButtonClicked, handleDeleteButtonClicked, handleLaunchButtonClicked, }) => {
-
+const Row: React.FC<RowProps> = ({ index, user, isExpanded, isActive, formatDate, handleContextMenu, handleEditButtonClicked, handleDeleteButtonClicked, handleLaunchButtonClicked, }) => {
+    console.log({ status: user.info.status });
     return (
         <>
-            <tr className={styles.tableRow} onContextMenu={(event) => handleContextMenu(event, index)}>
+            <tr className={`${styles.tableRow}${isActive ? ` ${styles.active}` : ""}${user.info.status ? "" : ` ${styles.checkpoint}`}`} onContextMenu={(event) => handleContextMenu(event, index)}>
                 <td className={styles.tableCell}>{index + 1}</td>
                 <td className={styles.tableCell}>{formatDate(user.info.createdAt || "")}</td>
                 <td className={styles.tableCell}>{user.info.uid}</td>

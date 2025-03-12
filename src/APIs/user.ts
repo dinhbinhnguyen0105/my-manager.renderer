@@ -35,29 +35,58 @@ const list = (): Promise<IPCUserInterface> => {
                             message: "User list successfully retrieved.",
                         });
                     })
-                    .catch(error => reject(error))
+                    .catch(error => reject({
+                        status: 500,
+                        message: (error as string).toString()
+                    }));
             }
         } catch (error) {
-            reject(error);
+            reject({
+                status: 500,
+                message: (error as string).toString()
+            });
         }
     });
 };
 
-const get = (id: string): Promise<IPCUserInterface> => {
+const get = (id: string): Promise<{
+    data: UserInterface | null,
+    status: number,
+    message: string,
+}> => {
     return new Promise((resolve, reject) => {
         try {
             if (window?.electronAPIs) {
                 resolve(window.electronAPIs.user_get(id));
             } else {
-                resolve({
-                    data: null,
-                    status: 200,
-                    message: `User with ID ${id} successfully retrieved.`,
-                });
-            }
+                fetch("http://localhost:3000/user")
+                    .then(res => res.json())
+                    .then(res => {
+                        const user = res.find((user: UserInterface) => user.info.id === id);
+                        if (user) {
+                            resolve({
+                                data: user,
+                                status: 200,
+                                message: `User with ID ${id} successfully retrieved.`,
+                            });
+                        } else {
+                            reject({
+                                status: 500,
+                                message: "Invalid user "
+                            });
+                        };
+                    })
+                    .catch(error => reject({
+                        status: 500,
+                        message: (error as string).toString()
+                    }));
+            };
         } catch (error) {
-            reject(error);
-        }
+            reject({
+                status: 500,
+                message: (error as string).toString()
+            });
+        };
     });
 };
 
@@ -70,7 +99,7 @@ const update = (user: UserInterface): Promise<IPCUserInterface> => {
                 resolve({
                     data: null,
                     status: 200,
-                    message: "User successfully updated.",
+                    message: `User with ID ${user.info.id} successfully updated.`,
                 });
             }
         } catch (error) {
@@ -101,7 +130,7 @@ const select = (id: string, isSelected: boolean): Promise<IPCUserInterface> => {
     return new Promise((resolve, reject) => {
         try {
             if (window?.electronAPIs) {
-                resolve(window.electronAPIs.user_select(id, isSelected));
+                resolve(window.electronAPIs.USER_SET_SELECT(id, isSelected));
             } else {
                 resolve({
                     data: null,
@@ -119,7 +148,7 @@ const selectAll = (isSelected: boolean): Promise<IPCUserInterface> => {
     return new Promise((resolve, reject) => {
         try {
             if (window?.electronAPIs) {
-                resolve(window.electronAPIs.user_select_all(isSelected));
+                resolve(window.electronAPIs.USER_SET_SELECT_all(isSelected));
             } else {
                 resolve({
                     data: null,
@@ -149,8 +178,8 @@ export {
 // user_create
 // user_update
 // user_delete
-// user_select
-// user_select_all
+// USER_SET_SELECT
+// USER_SET_SELECT_all
 
 // bot_like_comment_get
 // bot_like_comment_update

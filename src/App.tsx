@@ -8,6 +8,7 @@ import NoMatch from "~/container/NoMatch/NoMatch";
 import User from "~/container/User/Users";
 import List from "~/container/User/List/List";
 import Create from "~/container/User/Create/Create";
+import Update from "~/container/User/Update/Update";
 
 const App: React.FC = () => {
     return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                             <Route index element={<List />} />
                             <Route path="list" element={<List />} />
                             <Route path="create" element={<Create />} />
+                            <Route path="update" element={<Update />} />
                         </Route>
                         <Route path="*" element={<NoMatch />} />
                     </Routes>

@@ -1,9 +1,19 @@
 // Row.module.scss
+@use "~/App.scss" as *;
+
 .tableRow {
     position: relative;
 
     &:hover {
         background-color: #f1f1f1;
+    }
+
+    &.active {
+        background-color: #e0ffe0 !important;
+    }
+
+    &.checkpoint {
+        background-color: $color-warning;
     }
 
     .tableCell {
@@ -18,17 +28,21 @@
 
         .actionButton {
             width: 100%;
-            background-color: rgba($color: #32CD30, $alpha: 1);
-            color: white;
+            text-transform: capitalize;
+            background-color: $color-success;
             border: none;
-            padding: 10px 15px;
-            border-radius: 8px;
+            box-shadow: none;
+            padding: 0.6rem 1.6rem;
+            border-radius: $border-radius;
+            color: $color-white;
             cursor: pointer;
 
             &:hover {
-                background-color: rgba($color: #32CD30, $alpha: .8);
+                background-color: $color-success-hover;
+                box-shadow: 1px 1px 4px 1px $color-border;
             }
         }
+
     }
 }
 
@@ -75,29 +89,29 @@
             padding: 20px; // Padding cho div
 
             .actionButton {
-                margin: 0 2rem;
-                padding: 0.8rem 2rem;
                 text-transform: capitalize;
-                border-radius: 8px;
                 border: none;
-                cursor: pointer; // Con trỏ chuột khi di chuột lên nút
+                box-shadow: none;
+                padding: 0.6rem 1.6rem;
+                border-radius: $border-radius;
+                color: $color-white;
                 transition: background-color 0.3s ease; // Hiệu ứng chuyển tiếp
-                color: #fff;
+                cursor: pointer; // Con trỏ chuột khi di chuột lên nút
 
                 &:first-child {
-                    background-color: rgba($color: #007bff, $alpha: 1.0);
+                    background-color: $color-button-background;
                 }
 
                 &:first-child:hover {
-                    background-color: rgba($color: #007bff, $alpha: .6);
+                    background-color: $color-button-background-hover;
                 }
 
                 &:last-child {
-                    background-color: rgba($color: #DB1F48, $alpha: 1.0);
+                    background-color: $color-danger;
                 }
 
                 &:last-child:hover {
-                    background-color: rgba($color: #DB1F48, $alpha: .6);
+                    background-color: $color-danger-hover;
                 }
 
             }

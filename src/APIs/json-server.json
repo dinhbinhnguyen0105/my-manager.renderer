@@ -16,7 +16,7 @@
                 "group": "0",
                 "type": "",
                 "note": "",
-                "status": "",
+                "status": false,
                 "createdAt": "",
                 "updatedAt": ""
             },
@@ -55,7 +55,7 @@
                 "group": "1",
                 "type": "",
                 "note": "",
-                "status": "",
+                "status": true,
                 "createdAt": "",
                 "updatedAt": ""
             },
@@ -94,7 +94,7 @@
                 "group": "2",
                 "type": "",
                 "note": "",
-                "status": "",
+                "status": true,
                 "createdAt": "",
                 "updatedAt": ""
             },
@@ -133,7 +133,7 @@
                 "group": "3",
                 "type": "",
                 "note": "",
-                "status": "",
+                "status": true,
                 "createdAt": "",
                 "updatedAt": ""
             },
@@ -172,7 +172,7 @@
                 "group": "4",
                 "type": "",
                 "note": "",
-                "status": "",
+                "status": true,
                 "createdAt": "",
                 "updatedAt": ""
             },
@@ -195,5 +195,10 @@
             },
             "actions": {}
         }
-    ]
+    ],
+    "setting": {
+        "isMobile": false,
+        "proxy": "https://www.blabla-proxy",
+        "process": 1
+    }
 }

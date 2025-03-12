@@ -8,8 +8,8 @@ import SearchContext from "~/store/search/SearchContext";
 import { list as actionList, del as actionDelete } from "~/store/user/userActions";
 import styles from "./List.module.scss";
 import Row from "./Row";
-import Setting from "~/components/Setting/Setting";
-// import Launch from "~/components/modals/Launch";
+import Setting from "~/components/modals/Setting/Setting";
+import constants from "~/constants";
 
 const List: React.FC = () => {
     const [users, usersDispatch] = useContext(UserContext);
@@ -105,7 +105,7 @@ const List: React.FC = () => {
                                     <th className={styles.tableCell}>Group</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className={styles.tableBody}>
                                 {
                                     filterUsers.map((user, index) => (
                                         <Row
@@ -114,6 +114,7 @@ const List: React.FC = () => {
                                             user={user}
                                             formatDate={formatDate}
                                             isExpanded={index === expandRowIndex}
+                                            isActive={currentId === user.info.id ? true : false}
                                             handleContextMenu={handleRowContextMenu}
                                             handleEditButtonClicked={handleEditButtonClicked}
                                             handleDeleteButtonClicked={handleDeleteButtonClicked}
@@ -129,8 +130,7 @@ const List: React.FC = () => {
                 }
             </div>
             {
-                // currentId && <Launch id={currentId} isOpen={isLaunchModal} onClose={() => setIsLaunchModal(false)} />
-                currentId && <Setting isOpen={isLaunchModal} onClose={() => setIsLaunchModal(false)} idsSelected={[currentId]} />
+                currentId && <Setting isOpen={isLaunchModal} onClose={() => setIsLaunchModal(false)} action={constants.ACTION_OPEN_BROWSER} idsSelected={[currentId]} />
             }
 
         </div>

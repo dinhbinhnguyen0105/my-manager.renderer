@@ -1,5 +1,5 @@
 import { UserInterface, UserActionType } from "~/types/user";
-import * as constants from "./userConstants";
+import constants from "~/constants";
 
 const UserReducer = (state: UserInterface[], action: UserActionType): UserInterface[] => {
     switch (action.type) {
@@ -14,8 +14,8 @@ const UserReducer = (state: UserInterface[], action: UserActionType): UserInterf
                 return newUsers;
             }
         };
-        case constants.USER_SELECT: return state;
-        case constants.USER_SELECT_ALL: return state;
+        case constants.USER_SET_SELECT: return state;
+        case constants.USER_SET_SELECT_ALL: return state;
 
         default: throw new Error("Invalid user action.")
     };
