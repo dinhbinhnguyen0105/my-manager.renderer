@@ -1,21 +1,29 @@
-// Row.tsx
+import { memo } from "react";
 import { UserInterface } from "~/types/user";
 import styles from "./Row.module.scss";
 
-const Row: React.FC<{ index: number, user: UserInterface, isSelected: boolean, handleSelectUser: (id: string, preSelectedValue: boolean) => void }> = ({ index, user, isSelected, handleSelectUser }) => {
-
-    return (
-        <>
-            <tr className={`${styles.tableRow} ${isSelected ? styles.selected : ""}`}>
-                <td>
-                    <input type="checkbox" checked={isSelected} onChange={() => handleSelectUser(user.info.id, isSelected)} />
-                </td>
-                <td className={styles.tableCell}>{index + 1}</td>
-                <td className={styles.tableCell}>{user.info.username}</td>
-                <td className={styles.tableCell}>{user.info.group}</td>
-            </tr>
-        </>
-    )
+interface RowProps {
+    index: number;
+    user: UserInterface;
+    isSelected: boolean;
+    handleSelectUser: (id: string) => void;
 }
 
-export default Row;
+const Row: React.FC<RowProps> = ({ index, user, isSelected, handleSelectUser }) => {
+    return (
+        <tr className={`${styles.tableRow} ${isSelected ? styles.selected : ""}`}>
+            <td>
+                <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => handleSelectUser(user.info.id)} // Chỉ truyền ID
+                />
+            </td>
+            <td className={styles.tableCell}>{index + 1}</td>
+            <td className={styles.tableCell}>{user.info.username}</td>
+            <td className={styles.tableCell}>{user.info.group}</td>
+        </tr>
+    );
+};
+
+export default memo(Row); // Đảm bảo sử dụng memo

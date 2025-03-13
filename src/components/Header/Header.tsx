@@ -20,7 +20,7 @@ const Header: React.FC = () => {
                             <li className={styles.navigationItem}><Link to="/user/create">create</Link></li>
                         </ul>
                     </li>
-                    <li className={styles.navigationItem}><Link to="/robot">robot</Link></li>
+                    <li className={styles.navigationItem}><Link to="/bot">robot</Link></li>
                 </ul>
             </nav>
             <div className={styles.searchContainer}>
