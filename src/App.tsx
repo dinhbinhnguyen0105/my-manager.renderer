@@ -9,7 +9,9 @@ import User from "~/container/User/Users";
 import List from "~/container/User/List/List";
 import Create from "~/container/User/Create/Create";
 import Update from "~/container/User/Update/Update";
-import Bot from "./container/Bot/Bot";
+import Bot from "~/container/Bot/Bot";
+// import Contents from "~/container/Bot/Contents/Contents";
+import LikeAndComment from "~/container/Bot/Contents/LikeAndComment/LikeAndComment";
 
 const App: React.FC = () => {
     return (
@@ -28,7 +30,9 @@ const App: React.FC = () => {
                             <Route path="update" element={<Update />} />
                         </Route>
                         <Route path="bot" element={<Bot />}>
-
+                            <Route path="interaction" >
+                                <Route path="like-comment" element={<LikeAndComment />} />
+                            </Route>
                         </Route>
                         <Route path="*" element={<NoMatch />} />
                     </Routes>

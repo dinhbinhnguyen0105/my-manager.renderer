@@ -11,9 +11,8 @@ export interface ListUserProps {
 
 const List: React.FC<ListUserProps> = ({ users, handleSelectUser, handleSelectAllUser }) => {
     const isSelectAll = users.length > 0 && users.every(user => user.actions.isSelected);
-
     return (
-        <div className="usersContainer">
+        <div className={styles.usersContainer}>
             {users.length ? (
                 <table className={styles.userTable}>
                     <thead className={styles.tableHeader}>
@@ -23,10 +22,12 @@ const List: React.FC<ListUserProps> = ({ users, handleSelectUser, handleSelectAl
                                     {isSelectAll ? "Deselect All" : "Select All"}
                                 </label>
                                 <input
+                                    name="selectAll"
                                     type="checkbox"
                                     id="selectAll"
                                     checked={isSelectAll}
                                     onChange={(e) => handleSelectAllUser(e.target.checked)}
+                                    hidden
                                 />
                             </th>
                             <th className={styles.tableCell}>No.</th>

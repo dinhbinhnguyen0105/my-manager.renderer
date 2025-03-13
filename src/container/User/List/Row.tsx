@@ -16,7 +16,6 @@ interface RowProps {
 };
 
 const Row: React.FC<RowProps> = ({ index, user, isExpanded, isActive, formatDate, handleContextMenu, handleEditButtonClicked, handleDeleteButtonClicked, handleLaunchButtonClicked, }) => {
-    console.log({ status: user.info.status });
     return (
         <>
             <tr className={`${styles.tableRow}${isActive ? ` ${styles.active}` : ""}${user.info.status ? "" : ` ${styles.checkpoint}`}`} onContextMenu={(event) => handleContextMenu(event, index)}>

@@ -1,9 +1,11 @@
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import Header from "~/components/Header/Header";
-import List, { ListUserProps } from "./Users/List";
+import Contents from "./Contents/Contents";
+import List, { } from "./Users/List";
 import { useCallback, useEffect, useState } from "react";
 import { UserInterface } from "~/types/user";
 import { list as userList } from "~/APIs/user";
+import styles from "./Bot.module.scss";
 
 const Bot: React.FC = () => {
     const [listUser, setListUser] = useState<UserInterface[]>([]);
@@ -41,18 +43,22 @@ const Bot: React.FC = () => {
         );
     }, []);
 
+    useEffect(() => {
+        console.log(listUser)
+    }, [listUser])
+
     return (
-        <div className="botContainer">
+        <>
             <Header />
-            <div className="botContent">
+            <div className={styles.botContainer}>
                 <List
                     users={listUser}
                     handleSelectUser={handleSelectUser}
                     handleSelectAllUser={handleSelectAllUser}
                 />
-                <Outlet />
+                <Contents />
             </div>
-        </div>
+        </>
     );
 };
 

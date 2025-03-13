@@ -15,8 +15,9 @@ const Row: React.FC<RowProps> = ({ index, user, isSelected, handleSelectUser }) 
             <td>
                 <input
                     type="checkbox"
-                    checked={isSelected}
+                    checked={isSelected || false}
                     onChange={() => handleSelectUser(user.info.id)} // Chỉ truyền ID
+                    name="isSelected"
                 />
             </td>
             <td className={styles.tableCell}>{index + 1}</td>
