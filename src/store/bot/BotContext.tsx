@@ -1,4 +1,6 @@
-//BotContext.tsx
-
 import { createContext } from "react";
-import { BotContextType } from "~/types/bot";
+import { BotInterface, initBotState } from "~/types/bot";
+
+const BotContext = createContext<BotInterface>(initBotState);
+
+export default BotContext;

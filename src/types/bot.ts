@@ -1,3 +1,4 @@
+import { Dispatch } from "react";
 export type ReactionsType = "like" | "love" | "haha" | "wow" | "sad" | "angry";
 export type NewsFeedType = {
     isSelected: boolean,
@@ -144,8 +145,9 @@ const initBotState: BotInterface = {
 
 export type BotActionType = {
     type: string,
-
+    likeComment?: LikeCommentInterface
+    [key: string]: any
 }
-
-// export type BotContextType = [BotInterface, Disatch<]
+// 
+// export type BotContextType = [BotInterface, Dispatch<React.SetStateAction<BotInterface>>]
 export { initBotState, initLikeAndCommentState };
