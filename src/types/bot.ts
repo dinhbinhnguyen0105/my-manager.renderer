@@ -142,4 +142,10 @@ const initBotState: BotInterface = {
     likeAndComment: initLikeAndCommentState,
 }
 
+export type BotActionType = {
+    type: string,
+
+}
+
+// export type BotContextType = [BotInterface, Disatch<]
 export { initBotState, initLikeAndCommentState };

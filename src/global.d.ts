@@ -1,4 +1,5 @@
-import { IPCActionInterface, IPCSettingInterface, IPCUserInterface } from "./types/ipcs";
+import { LikeCommentInterface } from "./types/bot";
+import { IPCActionInterface, IPCLikeCommentInterface, IPCSettingInterface, IPCUserInterface } from "./types/ipcs";
 import { SettingInterface } from "./types/setting";
 import { UserInterface } from "./types/user";
 
@@ -38,8 +39,11 @@ declare global {
             // action_open_browser: (id:string) => Promise<
             // action_like_comment:
 
-            // bot_like_comment_get
-            // bot_like_comment_update
+            bot_like_comment_get: () => Promise<IPCLikeCommentInterface>;
+            bot_lie_comment_update: (likeComment: LikeCommentInterface) => Promise<{
+                status: number,
+                message: string,
+            }>
         };
     }
 }
