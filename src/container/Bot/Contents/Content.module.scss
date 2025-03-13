@@ -2,7 +2,7 @@
 
 .contents {
     padding: 1rem;
-    background-color: $color-background;
+    background-color: $color-white;
     border-radius: $border-radius;
     margin: 1rem;
     width: 100%;
@@ -10,7 +10,7 @@
 
     .header {
         // Styles for the header section
-        background-color: $color-white;
+        background-color: $color-content;
         height: 2.4rem;
         padding: 0 2rem;
         border-radius: $border-radius;

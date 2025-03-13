@@ -6,6 +6,7 @@ export type InputFieldProps = {
     checked?: boolean;
     value?: string | number;
     name: string;
+    id: string | "",
     label?: string;
     placeholder?: string;
     className?: string;
@@ -20,20 +21,23 @@ const InputField: React.FC<InputFieldProps> = ({
     label,
     placeholder,
     className = "",
+    id = "",
     onChange,
 }) => {
+    console.log(styles)
     return (
-        <div className={`${styles.fieldContainer} ${className}`}>
-            {label && <span className={styles.labelText}>{label}</span>}
+        <div className={` ${styles.fieldContainer} ${className}`}>
             <input
                 type={type}
                 checked={checked}
                 value={value}
                 name={name}
+                id={id}
                 placeholder={placeholder}
                 onChange={onChange}
                 className={styles.inputField}
             />
+            {label && <label htmlFor={id} className={styles.labelText}>{label}</label>}
         </div>
     );
 };

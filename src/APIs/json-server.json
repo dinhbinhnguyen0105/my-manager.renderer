@@ -200,5 +200,92 @@
         "isMobile": false,
         "proxy": "https://www.blabla-proxy",
         "process": 1
+    },
+    "bot": {
+        "likeAndComment": {
+            "isSelected": false,
+            "newsFeed": {
+                "isSelected": false,
+                "value": 0,
+                "like": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "comment": {
+                    "isSelected": false,
+                    "value": 0
+                }
+            },
+            "watch": {
+                "isSelected": false,
+                "value": 0,
+                "like": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "comment": {
+                    "isSelected": false,
+                    "value": 0
+                }
+            },
+            "group": {
+                "isSelected": false,
+                "value": 0,
+                "like": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "comment": {
+                    "isSelected": false,
+                    "value": 0
+                }
+            },
+            "friend": {
+                "isSelected": false,
+                "value": 0,
+                "like": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "comment": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "poke": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "pokeBack": {
+                    "isSelected": false,
+                    "value": 0
+                }
+            },
+            "page": {
+                "isSelected": false,
+                "value": 0,
+                "url": "",
+                "like": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "comment": {
+                    "isSelected": false,
+                    "value": 0
+                },
+                "invite": {
+                    "isSelected": false,
+                    "value": 0
+                }
+            },
+            "marketplace": {
+                "isSelected": false
+            },
+            "notification": {
+                "isSelected": false
+            },
+            "search": {
+                "isSelected": false
+            }
+        }
     }
 }

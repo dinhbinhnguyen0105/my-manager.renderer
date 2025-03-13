@@ -1,22 +1,40 @@
-import styles from "./LikeAndComment.module.scss";
+import { useEffect, useState } from "react";
 
-const newsFeed: React.FC = () => {
-    return (
-        <div className="content newsFeed">
-            <label htmlFor="isSelected">news Feed</label>
-            <input type="checkbox" name="isSelected" />
-            <input type="text" name="value" />
-        </div>
-    )
-}
+import styles from "./LikeAndComment.module.scss";
+import InputField from "~/components/InputField/InputField";
+
 
 const LikeAndComment: React.FC = () => {
+    const [isSelected, setIsSelected] = useState<boolean>(false);
+    const [value, setValue] = useState<string>("");
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setIsSelected(e.target.checked);
+    };
+    const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(e.target.value);
+    };
 
     return (
         <div className={styles.likeCommentContainer}>
             <div className="contents">
                 <div className="content newsFeed">
-                    <label htmlFor="is"></label>
+                    <InputField
+                        type="checkbox"
+                        checked={isSelected}
+                        name="isSelected"
+                        label="News Feed"
+                        id="newsfeed"
+                        className="newsFeed"
+                        onChange={handleCheckboxChange}
+                    />
+                    <InputField
+                        type="text"
+                        value={value}
+                        name="value"
+                        id="test"
+                        label="count"
+                        onChange={handleTextChange}
+                    />
                 </div>
             </div>
         </div>

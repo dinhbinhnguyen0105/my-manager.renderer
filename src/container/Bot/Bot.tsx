@@ -43,10 +43,6 @@ const Bot: React.FC = () => {
         );
     }, []);
 
-    useEffect(() => {
-        console.log(listUser)
-    }, [listUser])
-
     return (
         <>
             <Header />
