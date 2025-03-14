@@ -10,7 +10,8 @@
 
     .header {
         // Styles for the header section
-        background-color: $color-content;
+        background-color: $color-white;
+        box-shadow: 1px 1px 6px 1px $color-border;
         height: 2.4rem;
         padding: 0 2rem;
         border-radius: $border-radius;

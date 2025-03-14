@@ -1,42 +1,42 @@
-// components/InputField.tsx
+// InputField.tsx
+
 import styles from "./InputField.module.scss";
 
-export type InputFieldProps = {
+type InputFieldProps = {
     type?: "checkbox" | "text";
     checked?: boolean;
     value?: string | number;
-    name: string;
-    id: string | "",
     label?: string;
-    placeholder?: string;
     className?: string;
+    id?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const InputField: React.FC<InputFieldProps> = ({
-    type = "text",
-    checked,
-    value,
-    name,
-    label,
-    placeholder,
-    className = "",
-    id = "",
-    onChange,
-}) => {
+const InputField: React.FC<InputFieldProps> = ({ type = "text", checked, value, label, className, id, onChange, }) => {
     return (
-        <div className={` ${styles.fieldContainer} ${className}`}>
-            <input
-                type={type}
-                checked={checked}
-                value={value}
-                name={name}
-                id={id}
-                placeholder={placeholder}
-                onChange={onChange}
-                className={styles.inputField}
-            />
-            {label && <label htmlFor={id} className={styles.labelText}>{label}</label>}
+        <div className={`${styles.inputFieldContainer} ${className}`}>
+            {
+                type === "checkbox" ? (
+                    <input
+                        className={styles.inputCheckbox}
+                        type="checkbox"
+                        checked={checked}
+                        name={id}
+                        id={id}
+                        onChange={onChange}
+                    />
+                ) : (
+                    <input
+                        className={styles.inputText}
+                        type="text"
+                        value={value}
+                        name={id}
+                        id={id}
+                        onChange={onChange}
+                    />
+                )
+            }
+            {label && (<label htmlFor={id} className={styles.labelText}>{label}</label>)}
         </div>
     );
 };

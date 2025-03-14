@@ -1,5 +1,5 @@
 //  components/InputField.module.scss
-.fieldContainer {
+.inputFieldContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,26 +7,25 @@
     font-size: 0.8rem;
     font-weight: 400;
     white-space: nowrap;
+    max-width: 100%;
 
-    input {
-        margin: 0 0.4rem;
-        padding: 0.6rem .8rem;
+    .inputText {
+        // margin: 0 0.4rem;
+        margin-left: 1rem;
+        margin-right: .4rem;
+        padding: 0.4rem .8rem;
         max-width: 3.6rem;
         border-radius: 8px;
         border: 1px solid #ccc;
         margin-right: 0.2rem;
-
-
+        max-width: 100%;
     }
 
-    label {
+    .inputCheckbox {}
+
+    .labelText {
         display: flex;
         font-size: 0.8rem;
         text-transform: capitalize;
     }
-}
-
-#pageUrl {
-    background-color: blue;
-    padding: 0 10rem;
 }
