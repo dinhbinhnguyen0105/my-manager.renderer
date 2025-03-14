@@ -6,11 +6,13 @@ import styles from "./Home.module.scss"
 const Home: React.FC = () => {
 
     return (
-        <div className={styles.homeContainer}>
+        <>
             <Header />
-            <Outlet />
-            <h2>Home page</h2>
-        </div>
+            <div className={styles.homeContainer}>
+                <Outlet />
+                <h2>Home page</h2>
+            </div>
+        </>
     );
 };
 

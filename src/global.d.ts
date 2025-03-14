@@ -15,6 +15,7 @@ declare module "*.svg" {
     export default src;
 }
 
+
 declare global {
     interface Window {
         electronAPIs?: {

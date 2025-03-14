@@ -3,10 +3,12 @@
 
 .userCreateContainer {
     // width: 100wh;
+    margin-top: 3rem;
+    padding-top: 2rem;
 
     .container {
         width: 480px;
-        margin: 3rem auto;
+        margin: 0 auto;
         padding: 1rem;
         display: flex;
         flex-direction: column;

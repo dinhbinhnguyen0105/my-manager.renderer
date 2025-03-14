@@ -1,10 +1,11 @@
 // Bot.module.scss
 
 .botContainer {
+    width: 100%;
     display: flex;
     justify-content: start;
     align-items: center;
     margin: 2rem 1rem;
-    width: 100%;
+    padding-top: 2rem;
     box-sizing: border-box;
 }

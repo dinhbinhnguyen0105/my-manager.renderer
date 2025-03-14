@@ -8,8 +8,8 @@ const User: React.FC = () => {
 
     return (
         <UserProvider>
+            <Header />
             <div className={styles.userContainer}>
-                <Header />
                 <Outlet />
             </div>
         </UserProvider>

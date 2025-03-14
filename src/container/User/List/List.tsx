@@ -80,7 +80,7 @@ const List: React.FC = () => {
             .finally(() => target.innerHTML = defaultInnerHTML);
     }, [usersDispatch, expandRowIndex]);
 
-    const handleLaunchButtonClicked = useCallback((event: React.MouseEvent<EventTarget>, id: string): void => {
+    const handleLaunchButtonClicked = useCallback((id: string): void => {
         // const target = event.currentTarget as HTMLButtonElement;
         // const defaultInnerHTML = target.innerHTML;
         // target.innerHTML = "...";
@@ -118,7 +118,7 @@ const List: React.FC = () => {
                                             handleContextMenu={handleRowContextMenu}
                                             handleEditButtonClicked={handleEditButtonClicked}
                                             handleDeleteButtonClicked={handleDeleteButtonClicked}
-                                            handleLaunchButtonClicked={handleLaunchButtonClicked}
+                                            handleLaunchButtonClicked={() => handleLaunchButtonClicked(user.info.id)}
                                         />
                                     ))
                                 }

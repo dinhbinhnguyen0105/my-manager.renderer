@@ -11,8 +11,8 @@ const Bot: React.FC = () => {
 
     return (
         <>
-            <Header />
             <UserProvider>
+                <Header />
                 <BotProvider>
                     <div className={styles.botContainer}>
                         <User />

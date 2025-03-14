@@ -1,6 +1,7 @@
 // Header.tsx
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+// @ts-ignore
 import { ReactComponent as SearchSvgIcon } from "~/assets/icons/search.svg";
 import SearchContext from "~/store/search/SearchContext";
 import styles from "./Header.module.scss";

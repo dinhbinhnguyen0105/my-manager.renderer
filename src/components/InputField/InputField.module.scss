@@ -1,4 +1,32 @@
 //  components/InputField.module.scss
 .fieldContainer {
-    //
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    white-space: nowrap;
+
+    input {
+        margin: 0 0.4rem;
+        padding: 0.6rem .8rem;
+        max-width: 3.6rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-right: 0.2rem;
+
+
+    }
+
+    label {
+        display: flex;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+    }
+}
+
+#pageUrl {
+    background-color: blue;
+    padding: 0 10rem;
 }

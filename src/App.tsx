@@ -10,7 +10,6 @@ import List from "~/container/User/List/List";
 import Create from "~/container/User/Create/Create";
 import Update from "~/container/User/Update/Update";
 import Bot from "~/container/Bot/Bot";
-// import Contents from "~/container/Bot/Contents/Contents";
 import LikeComment from "~/container/Bot/Contents/LikeComment/LikeComment";
 
 const App: React.FC = () => {
