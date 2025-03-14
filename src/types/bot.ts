@@ -84,7 +84,7 @@ export type SearchType = {
 };
 
 export interface LikeCommentInterface {
-    isSelected: boolean,
+    // isSelected: boolean,
     newsFeed: NewsFeedType,
     watch: WatchType,
     group: GroupType,
@@ -100,7 +100,7 @@ export interface BotInterface {
 }
 
 const initLikeAndCommentState: LikeCommentInterface = {
-    isSelected: false,
+    // isSelected: false,
     newsFeed: {
         isSelected: false,
         value: 0,
@@ -149,5 +149,5 @@ export type BotActionType = {
     [key: string]: any
 }
 // 
-// export type BotContextType = [BotInterface, Dispatch<React.SetStateAction<BotInterface>>]
+export type BotContextType = [BotInterface, Dispatch<React.SetStateAction<BotInterface>>]
 export { initBotState, initLikeAndCommentState };

@@ -4,9 +4,10 @@ const USER_GET = "/user/get";
 const USER_CREATE = "/user/create";
 const USER_UPDATE = "/user/update";
 const USER_DELETE = "/user/delete";
-const USER_SET_SELECT = "/user/update/select";
-const USER_SET_SELECT_ALL = "/user/update/select_all";
-
+// const USER_SET_SELECT = "/user/update/select";
+// const USER_SET_SELECT_ALL = "/user/update/select_all";
+const USER_TOGGLE_SELECTION = "toggle_selection";
+const USER_TOGGLE_SELECTION_ALL = "toggle_selection_all";
 const BOT_LIKE_COMMENT_GET = "/bot/like_comment";
 const BOT_LIKE_COMMENT_UPDATE = "/bot/like_comment/update";
 
@@ -22,14 +23,14 @@ const constants = {
     USER_CREATE,
     USER_UPDATE,
     USER_DELETE,
-    USER_SET_SELECT,
-    USER_SET_SELECT_ALL,
     BOT_LIKE_COMMENT_GET,
     BOT_LIKE_COMMENT_UPDATE,
     SETTING_GET,
     SETTING_UPDATE,
     ACTION_OPEN_BROWSER,
     ACTION_LIKE_COMMENT,
+    USER_TOGGLE_SELECTION,
+    USER_TOGGLE_SELECTION_ALL,
 }
 
 export default constants;

@@ -24,7 +24,6 @@ const InputField: React.FC<InputFieldProps> = ({
     id = "",
     onChange,
 }) => {
-    console.log(styles)
     return (
         <div className={` ${styles.fieldContainer} ${className}`}>
             <input

@@ -14,8 +14,22 @@ const UserReducer = (state: UserInterface[], action: UserActionType): UserInterf
                 return newUsers;
             }
         };
-        case constants.USER_SET_SELECT: return state;
-        case constants.USER_SET_SELECT_ALL: return state;
+        case constants.USER_TOGGLE_SELECTION: {
+            return state.map(user =>
+                user.info.id === action.id ?
+                    { ...user, actions: { ...user.actions, isSelected: !user.actions.isSelected } } :
+                    user
+            );
+        };
+        case constants.USER_TOGGLE_SELECTION_ALL: {
+            return state.map(user => ({
+                ...user,
+                actions: {
+                    ...user.actions,
+                    isSelected: action.isSelected || false
+                }
+            }))
+        }
 
         default: throw new Error("Invalid user action.")
     };

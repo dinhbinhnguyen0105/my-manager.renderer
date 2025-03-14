@@ -40,7 +40,7 @@ declare global {
             // action_like_comment:
 
             bot_like_comment_get: () => Promise<IPCLikeCommentInterface>;
-            bot_lie_comment_update: (likeComment: LikeCommentInterface) => Promise<{
+            bot_like_comment_update: (likeComment: LikeCommentInterface) => Promise<{
                 status: number,
                 message: string,
             }>

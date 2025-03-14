@@ -203,7 +203,6 @@
     },
     "bot": {
         "likeAndComment": {
-            "isSelected": false,
             "newsFeed": {
                 "isSelected": false,
                 "value": 0,

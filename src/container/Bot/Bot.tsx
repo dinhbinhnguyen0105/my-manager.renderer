@@ -1,24 +1,25 @@
 
-import { useState, Dispatch } from "react";
 import Header from "~/components/Header/Header";
 import User from "./User/User";
 import Contents from "./Contents/Contents";
-import { createContext } from "vm";
-import { initUserState, UserInterface } from "~/types/user";
+import UserProvider from "~/store/user/UserProvider";
+import BotProvider from "~/store/bot/BotProvider";
+import styles from "./Bot.module.scss";
 
 const Bot: React.FC = () => {
-    const UserContext = createContext();
+
 
     return (
         <>
             <Header />
-            <UserContext>
-
-            </UserContext>
-            <div className="botContainer">
-                <User />
-                <Contents />
-            </div>
+            <UserProvider>
+                <BotProvider>
+                    <div className={styles.botContainer}>
+                        <User />
+                        <Contents />
+                    </div>
+                </BotProvider>
+            </UserProvider>
         </>
     );
 };

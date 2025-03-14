@@ -1,0 +1,50 @@
+// User.module.scss
+@use "~/App.scss" as *;
+
+.usersContainer {
+    min-width: 30%;
+    padding: 1rem;
+    background-color: $color-white;
+    border-radius: $border-radius;
+    box-shadow: 1px 1px 6px 1px $color-border;
+}
+
+.userTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableHeader {
+    background-color: #007bff;
+    color: white;
+
+    .tableCell {
+        text-align: center;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+}
+
+.tableCell {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tableCell label {
+    cursor: pointer;
+}
+
+.tableCell input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.errorMessage {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}

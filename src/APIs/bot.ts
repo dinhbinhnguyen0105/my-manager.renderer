@@ -37,7 +37,7 @@ const updateLikeComment = (likeComment: LikeCommentInterface): Promise<{ status:
     return new Promise((resolve, reject) => {
         try {
             if (window?.electronAPIs) {
-                resolve(window.electronAPIs.bot_lie_comment_update(likeComment));
+                resolve(window.electronAPIs.bot_like_comment_update(likeComment));
             } else {
                 resolve({
                     status: 200,

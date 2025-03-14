@@ -1,0 +1,91 @@
+@use "~/App.scss" as *;
+
+.contents {
+    padding: 1rem;
+    background-color: $color-white;
+    border-radius: $border-radius;
+    margin: 1rem;
+    width: 100%;
+    box-shadow: 1px 1px 6px 1px $color-border;
+
+    .header {
+        // Styles for the header section
+        background-color: $color-content;
+        height: 2.4rem;
+        padding: 0 2rem;
+        border-radius: $border-radius;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+
+        .navigation {
+            .navigationList {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                list-style: none;
+                font-weight: 400;
+
+                .navigationItem {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                    a {
+                        padding: 0 2rem;
+                        height: 2.4rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-transform: capitalize;
+                        text-decoration: none;
+                        color: $color-text;
+                        transition: background-color 0.3s;
+
+                        &:hover {
+                            background-color: $color-border;
+                        }
+                    }
+
+                    &:hover .navigationSubMenu {
+                        display: block;
+                    }
+
+                    .navigationSubMenu {
+                        display: none;
+                        position: absolute;
+                        flex-direction: column;
+                        justify-content: start;
+                        align-items: center;
+                        top: 2.4rem;
+                        box-shadow: 1px 1px 6px 1px $color-border;
+                        border-radius: 0 0 8px 8px;
+                        background-color: $color-background;
+                        width: 100%;
+
+                        .navigationItem {
+
+                            a {
+                                padding-left: 0;
+                                padding-right: 0;
+                                width: 100%;
+                                border-radius: 0;
+                                width: 100%;
+                            }
+
+                            &:last-child a {
+                                border-radius: 0 0 8px 8px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
