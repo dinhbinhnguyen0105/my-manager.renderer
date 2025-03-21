@@ -130,7 +130,7 @@ const select = (id: string, isSelected: boolean): Promise<IPCUserInterface> => {
     return new Promise((resolve, reject) => {
         try {
             if (window?.electronAPIs) {
-                resolve(window.electronAPIs.USER_SET_SELECT(id, isSelected));
+                resolve(window.electronAPIs.user_select(id, isSelected));
             } else {
                 resolve({
                     data: null,
@@ -148,7 +148,7 @@ const selectAll = (isSelected: boolean): Promise<IPCUserInterface> => {
     return new Promise((resolve, reject) => {
         try {
             if (window?.electronAPIs) {
-                resolve(window.electronAPIs.USER_SET_SELECT_all(isSelected));
+                resolve(window.electronAPIs.user_select_all(isSelected));
             } else {
                 resolve({
                     data: null,
@@ -178,11 +178,11 @@ export {
 // user_create
 // user_update
 // user_delete
-// USER_SET_SELECT
-// USER_SET_SELECT_all
+// user_select
+// user_select_all
 
-// bot_like_comment_get
-// bot_like_comment_update
+// bot_get
+// bot_update
 // setting_get
 // setting_update
 // action_open_browser

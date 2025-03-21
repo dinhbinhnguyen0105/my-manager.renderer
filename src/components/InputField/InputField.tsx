@@ -10,11 +10,14 @@ type InputFieldProps = {
     className?: string;
     id?: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    reverseLabel?: boolean;
+    placeHolder?: string;
 };
 
-const InputField: React.FC<InputFieldProps> = ({ type = "text", checked, value, label, className, id, onChange, }) => {
+const InputField: React.FC<InputFieldProps> = ({ type = "text", checked, value, label, className, id, onChange, reverseLabel = false, placeHolder }) => {
     return (
         <div className={`${styles.inputFieldContainer} ${className}`}>
+            {label && reverseLabel && (<label htmlFor={id} className={styles.labelText}>{label}</label>)}
             {
                 type === "checkbox" ? (
                     <input
@@ -33,10 +36,11 @@ const InputField: React.FC<InputFieldProps> = ({ type = "text", checked, value, 
                         name={id}
                         id={id}
                         onChange={onChange}
+                        placeholder={placeHolder}
                     />
                 )
             }
-            {label && (<label htmlFor={id} className={styles.labelText}>{label}</label>)}
+            {label && !reverseLabel && (<label htmlFor={id} className={styles.labelText}>{label}</label>)}
         </div>
     );
 };

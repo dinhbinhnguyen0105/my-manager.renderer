@@ -1,13 +1,22 @@
-// Setting.tsx
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useLocation } from 'react-router-dom';
+
 import styles from "./Setting.module.scss";
 import * as settingAPIs from "~/APIs/setting";
 import * as actionAPIs from "~/APIs/action";
-import constants from "~/constants";
+import { update as botUpdateAPI } from "~/APIs/bot";
+import { update as settingUpdateAPI } from "~/APIs/setting";
 import { initSettingState, SettingInterface } from "~/types/setting";
 
-const Setting: React.FC<{ isOpen: boolean, onClose: () => void, action: string, idsSelected: string[] }> = ({ isOpen, onClose, action, idsSelected }) => {
+import UserContext from "~/store/user/UserContext";
+import BotContext from "~/store/bot/BotContext";
+
+const Setting: React.FC<{ isOpen: boolean, onClose: () => void }> = ({ isOpen, onClose }) => {
     const [settingState, setSettingState] = useState<SettingInterface>(initSettingState);
+    const location = useLocation();
+    const [users,] = useContext(UserContext);
+    const [bot,] = useContext(BotContext);
+
     useEffect(() => {
         settingAPIs.get()
             .then(res => {
@@ -29,61 +38,22 @@ const Setting: React.FC<{ isOpen: boolean, onClose: () => void, action: string, 
         }));
     };
 
-    const handleSaveAndRun = (event: React.MouseEvent<HTMLButtonElement>): void => {
-        const target = event.target as HTMLButtonElement;
-        const defaultHTML = target.innerHTML;
-        target.innerHTML = "Saving ..."
-        target.disabled = true;
-
-        settingAPIs.update(settingState)
-            .then(res => {
-                if (res.status.toString().startsWith("2")) {
-                    target.innerHTML = "Saved";
-                    return true;
-                } else {
-                    target.innerHTML = "Error";
-                    console.log(res.message);
-                    return false;
-                };
-            })
-            .then(res => {
-                if (!res) { return false; };
-                if (action === constants.ACTION_OPEN_BROWSER) {
-                    if (idsSelected.length < 1) { return; }
-                    else {
-                        actionAPIs.openBrowser(idsSelected[0], settingState)
-                            .then(res => {
-                                if (res.status.toString().startsWith("2")) {
-                                    target.innerHTML = "Launching ...";
-                                    target.disabled = true;
-                                    console.log("Launching browser with id: ", idsSelected[0]);
-                                } else {
-                                    target.innerHTML = "Error";
-                                    console.log(res.message);
-                                };
-                                return true;
-                            })
-                            .catch(error => error);
-                    };
-                }
-                else if (action === constants.ACTION_LIKE_COMMENT) {
-                    //
-                } else {
-                    //
-                };
-            })
-            .catch(error => {
-                target.innerHTML = "Error";
-                console.error(error);
-            })
-            .finally(() => {
-                target.innerHTML = defaultHTML;
-                target.disabled = false;
-            });
+    const handleSaveAndRun = async () => {
+        try {
+            await botUpdateAPI(bot);
+            await settingUpdateAPI(settingState);
+            const idsSelected = users.filter(user => user.actions.isSelected).map(user => user.info.id);
+            if (location.pathname === "/bot/interaction/like-comment") {
+                const res = await actionAPIs.botLikeComment(idsSelected, bot.likeComment, settingState);
+                console.log(res);
+            }
+        } catch (error) {
+            console.error(error);
+            return false;
+        };
 
     };
-
-    if (!isOpen || idsSelected.length === 0) return null;
+    if (!isOpen) { return null; };
     return (
         <div className={styles.modalOverlay} onClick={onClose}>
             <div className={styles.settingContainer} onClick={e => e.stopPropagation()}>
@@ -106,6 +76,6 @@ const Setting: React.FC<{ isOpen: boolean, onClose: () => void, action: string, 
             </div>
         </div>
     );
-}
+};
 
 export default Setting;

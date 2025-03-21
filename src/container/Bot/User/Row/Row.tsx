@@ -6,7 +6,7 @@ interface RowProps {
     index: number;
     user: UserInterface;
     isSelected: boolean;
-    handleSelectUser: (id: string) => void;
+    handleSelectUser: (e: React.ChangeEvent<HTMLInputElement>, id: string) => void;
 }
 
 const Row: React.FC<RowProps> = ({ index, user, isSelected, handleSelectUser }) => {
@@ -16,7 +16,7 @@ const Row: React.FC<RowProps> = ({ index, user, isSelected, handleSelectUser }) 
                 <input
                     type="checkbox"
                     checked={isSelected || false}
-                    onChange={() => handleSelectUser(user.info.id)} // Chỉ truyền ID
+                    onChange={(e) => handleSelectUser(e, user.info.id)} // Chỉ truyền ID
                     name="isSelected"
                 />
             </td>

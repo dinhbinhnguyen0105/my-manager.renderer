@@ -89,4 +89,33 @@
             }
         }
     }
+
+    .footer {
+        background-color: $color-white;
+        box-shadow: 1px 1px 6px 1px $color-border;
+        padding: .4rem 2rem;
+        border-radius: $border-radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1rem;
+        margin: 1rem 0;
+
+        button {
+            text-transform: capitalize;
+            background-color: $color-success;
+            border: none;
+            box-shadow: none;
+            padding: 0.6rem 1.6rem;
+            border-radius: $border-radius;
+            color: $color-white;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-success-hover;
+                box-shadow: 1px 1px 4px 1px $color-border;
+            }
+        }
+    }
 }

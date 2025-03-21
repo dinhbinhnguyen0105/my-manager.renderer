@@ -22,13 +22,24 @@
             flex-direction: row;
             justify-content: left;
             align-items: center;
-            width: 100%;
 
             .section {
                 display: flex;
                 flex-direction: row;
-                margin: .2rem .8rem;
-                flex-basis: 30%;
+                margin: .2rem 0rem;
+            }
+
+            &.comments {
+                width: 100%;
+
+                .section {
+                    width: 100%;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
             }
         }
     }

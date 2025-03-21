@@ -436,17 +436,17 @@
         "process": 1
     },
     "bot": {
-        "likeAndComment": {
+        "likeComment": {
             "newsFeed": {
-                "isSelected": false,
-                "value": 0,
+                "isSelected": true,
+                "value": 5,
                 "like": {
-                    "isSelected": false,
-                    "value": 0
+                    "isSelected": true,
+                    "value": 2
                 },
                 "comment": {
-                    "isSelected": false,
-                    "value": 0
+                    "isSelected": true,
+                    "value": 2
                 }
             },
             "watch": {
@@ -518,7 +518,9 @@
             },
             "search": {
                 "isSelected": false
-            }
+            },
+            "comments": "",
+            "reactions": ""
         }
     }
 }

@@ -1,5 +1,5 @@
-import { LikeCommentInterface } from "./types/bot";
-import { IPCActionInterface, IPCLikeCommentInterface, IPCSettingInterface, IPCUserInterface } from "./types/ipcs";
+import { BotInterface, LikeCommentInterface } from "./types/bot";
+import { IPCActionInterface, IPCBotInterface, IPCLikeCommentInterface, IPCSettingInterface, IPCUserInterface } from "./types/ipcs";
 import { SettingInterface } from "./types/setting";
 import { UserInterface } from "./types/user";
 
@@ -29,22 +29,17 @@ declare global {
             user_create: (user: UserInterface) => Promise<IPCUserInterface>;
             user_update: (user: UserInterface) => Promise<IPCUserInterface>;
             user_delete: (id: string) => Promise<IPCUserInterface>;
-            USER_SET_SELECT: (id: string, isSelected: boolean) => Promise<IPCUserInterface>;
-            USER_SET_SELECT_all: (isSelected: boolean) => Promise<IPCUserInterface>;
+            user_select: (id: string, isSelected: boolean) => Promise<IPCUserInterface>;
+            user_select_all: (isSelected: boolean) => Promise<IPCUserInterface>;
 
             setting_get: () => Promise<IPCSettingInterface>;
             setting_update: (setting: SettingInterface) => Promise<IPCSettingInterface>;
 
-            action_open_browser: (id: string) => Promise<IPCActionInterface>;
+            action_open_browser: (id: string, setting: SettingInterface) => Promise<IPCActionInterface>;
+            action_bot_likeComment: (ids: string[], bot: LikeCommentInterface, setting: SettingInterface) => Promise<IPCActionInterface>;
 
-            // action_open_browser: (id:string) => Promise<
-            // action_like_comment:
-
-            bot_like_comment_get: () => Promise<IPCLikeCommentInterface>;
-            bot_like_comment_update: (likeComment: LikeCommentInterface) => Promise<{
-                status: number,
-                message: string,
-            }>
+            bot_get: () => Promise<IPCBotInterface>;
+            bot_update: (bot: BotInterface) => Promise<IPCBotInterface>;
         };
     }
 }

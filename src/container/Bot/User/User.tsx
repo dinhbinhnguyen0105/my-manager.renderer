@@ -2,16 +2,16 @@ import { useContext, useEffect, useCallback, useState } from "react";
 
 import UserContext from "~/store/user/UserContext";
 import styles from "./User.module.scss";
-import * as userAPIs from "~/APIs/user";
+import { list as userListAPI, select as userSelectAPI, selectAll as userSelectAllAPI } from "~/APIs/user";
 import * as userActions from "~/store/user/userActions";
 import Row from "./Row/Row";
 
 const User: React.FC = () => {
     const [users, usersDispatch] = useContext(UserContext);
-    const [isSelectAll, setIsSelectAll] = useState(false);
+    const [isSelectAll, setIsSelectAll] = useState<boolean>(false);
 
     useEffect(() => {
-        userAPIs.list()
+        userListAPI()
             .then(res => {
                 if (res.status.toString().startsWith("2") && res.data) {
                     usersDispatch(userActions.list(res.data));
@@ -22,13 +22,29 @@ const User: React.FC = () => {
             });
     }, []);
 
-    useEffect(() => {
-        usersDispatch(userActions.toggleSelectionAll(isSelectAll));
-    }, [isSelectAll]);
 
-    const handleSelectUser = useCallback((id: string): void => {
-        usersDispatch(userActions.toggleSelection(id));
+    const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {
+        userSelectAllAPI(e.target.checked);
+        // .then(res => {
+        //     if (res.status.toString().startsWith("2")) {
+        //         console.log(res.status);
+        //     } else {
+        //         console.error(res.message)
+        //     }
+        // });
+        setIsSelectAll(e.target.checked);
+        usersDispatch(userActions.toggleSelectionAll(e.target.checked));
+    };
 
+    const handleSelectUser = useCallback((e: React.ChangeEvent<HTMLInputElement>, id: string): void => {
+        userSelectAPI(id, e.target.checked)
+            .then(res => {
+                if (res.status.toString().startsWith("2")) {
+                    usersDispatch(userActions.toggleSelection(id));
+                } else {
+                    console.error(res.message)
+                }
+            });
     }, [users, usersDispatch]);
 
     return (
@@ -46,7 +62,7 @@ const User: React.FC = () => {
                                     type="checkbox"
                                     id="selectAll"
                                     checked={isSelectAll}
-                                    onChange={(e) => setIsSelectAll(e.target.checked)}
+                                    onChange={handleSelectAll}
                                     hidden
                                 />
                             </th>
